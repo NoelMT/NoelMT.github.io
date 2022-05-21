@@ -1,12 +1,12 @@
-$(document).ready(function () {
-    $('.container').mouseenter(function () {
-        $('.card').stop().animate({
-            top: '-90px'
-        }, 'slow');
-    }).mouseleave(function () {
-        $('.card').stop().animate({
-            top: 0
-        }, 'slow');
-    });
-});
 
+
+function loop() {
+    setTimeout(function() {
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.getElementById("time").innerHTML = time
+        loop();
+    }, 150)
+}
+
+loop();
